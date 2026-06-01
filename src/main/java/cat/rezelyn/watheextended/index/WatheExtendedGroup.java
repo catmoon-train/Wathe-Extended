@@ -87,6 +87,17 @@ public class WatheExtendedGroup {
                     entries.add(WatheExtendedBlocks.FAKE_SUSPICIOUS_SAND);
                     entries.add(WatheExtendedBlocks.FAKE_SUSPICIOUS_GRAVEL);
 
+                    // Cocktails
+                    entries.add(WatheExtendedItems.COTTON_CANDY_SHAKE);
+                    entries.add(WatheExtendedItems.GALAXY_FIZZ);
+                    entries.add(WatheExtendedItems.HONEY_LEMONADE);
+                    entries.add(WatheExtendedItems.MINT_OCEAN);
+                    entries.add(WatheExtendedItems.NEON_SPLASH);
+                    entries.add(WatheExtendedItems.PRIDE_PUNCH);
+                    entries.add(WatheExtendedItems.SUNSET_PRISM);
+                    entries.add(WatheExtendedItems.THE_AMETHYST);
+                    entries.add(WatheExtendedItems.VELVET_ACE);
+
                     // Items
                     entries.add(WatheExtendedItems.GUIDEBOOK);
                 })
