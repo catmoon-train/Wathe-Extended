@@ -28,6 +28,6 @@
     "fabricloader": ">=${loader_version}",
     "fabric-api": "*",
     "minecraft": "${minecraft_version}",
-    "starrailexpress": ">=4.0.0"
+    "starrailexpress": "*"
   }
 }
