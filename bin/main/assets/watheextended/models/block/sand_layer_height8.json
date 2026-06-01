@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/snow_height8",
+	"textures": {
+		"particle": "watheextended:block/sand_layer",
+		"texture": "watheextended:block/sand_layer"
+	}
+}

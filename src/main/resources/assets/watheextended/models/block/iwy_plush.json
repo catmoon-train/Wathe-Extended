@@ -1,0 +1,8 @@
+{
+	"credit": "_Iwy plush - Minecraft skin UVs",
+	"parent": "watheextended:block/greyifer_plush",
+	"textures": {
+		"0": "watheextended:block/iwy_plush",
+		"particle": "watheextended:block/iwy_plush"
+	}
+}

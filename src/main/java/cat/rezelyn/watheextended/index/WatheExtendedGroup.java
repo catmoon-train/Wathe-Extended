@@ -75,11 +75,20 @@ public class WatheExtendedGroup {
                     entries.add(WatheExtendedBlocks.SNOWY_AZALEA_LEAVES);
                     entries.add(WatheExtendedBlocks.SNOWY_FLOWERING_AZALEA_LEAVES);
 
-                    // Items
-                    entries.add(WatheExtendedItems.GUIDEBOOK);
-
                     // Plushies
                     entries.add(WatheExtendedBlocks.ISH_PLUSH);
+                    entries.add(WatheExtendedBlocks.GREYIFER_PLUSH);
+                    entries.add(WatheExtendedBlocks.IWY_PLUSH);
+
+                    // Decorative Blocks (from gexpress)
+                    entries.add(WatheExtendedBlocks.SAND_LAYER);
+                    entries.add(WatheExtendedBlocks.RED_SAND_LAYER);
+                    entries.add(WatheExtendedBlocks.PEBBLE_BLOCK);
+                    entries.add(WatheExtendedBlocks.FAKE_SUSPICIOUS_SAND);
+                    entries.add(WatheExtendedBlocks.FAKE_SUSPICIOUS_GRAVEL);
+
+                    // Items
+                    entries.add(WatheExtendedItems.GUIDEBOOK);
                 })
                 .build());
     }

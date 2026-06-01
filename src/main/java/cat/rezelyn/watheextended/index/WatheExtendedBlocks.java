@@ -1,12 +1,17 @@
 package cat.rezelyn.watheextended.index;
 
 import cat.rezelyn.watheextended.WatheExtended;
+import cat.rezelyn.watheextended.block.GreyiferPlushBlock;
 import cat.rezelyn.watheextended.block.IshPlushBlock;
+import cat.rezelyn.watheextended.block.PebbleBlock;
+import cat.rezelyn.watheextended.block.SandLayerBlock;
 import dev.doctor4t.wathe.block.OrnamentBlock;
 import dev.doctor4t.wathe.block.PanelBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.LeavesBlock;
+import net.minecraft.block.MapColor;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -72,6 +77,54 @@ public class WatheExtendedBlocks {
 
     // Plushies
     public static final Block ISH_PLUSH = register("ish_plush", new IshPlushBlock(AbstractBlock.Settings.create().nonOpaque().strength(0.5f).sounds(BlockSoundGroup.WOOL)));
+
+    // gexpress decorative blocks
+    public static final Block SAND_LAYER = register("sand_layer", new SandLayerBlock(AbstractBlock.Settings.create()
+            .mapColor(MapColor.PALE_YELLOW)
+            .replaceable()
+            .strength(0.5f)
+            .sounds(BlockSoundGroup.SAND)
+            .pistonBehavior(PistonBehavior.DESTROY)));
+
+    public static final Block RED_SAND_LAYER = register("red_sand_layer", new SandLayerBlock(AbstractBlock.Settings.create()
+            .mapColor(MapColor.ORANGE)
+            .replaceable()
+            .strength(0.5f)
+            .sounds(BlockSoundGroup.SAND)
+            .pistonBehavior(PistonBehavior.DESTROY)));
+
+    public static final Block GREYIFER_PLUSH = register("greyifer_plush", new GreyiferPlushBlock(AbstractBlock.Settings.create()
+            .mapColor(MapColor.BLACK)
+            .strength(0.5f)
+            .sounds(BlockSoundGroup.WOOL)
+            .nonOpaque()
+            .pistonBehavior(PistonBehavior.DESTROY)));
+
+    public static final Block IWY_PLUSH = register("iwy_plush", new GreyiferPlushBlock(AbstractBlock.Settings.create()
+            .mapColor(MapColor.WHITE)
+            .strength(0.5f)
+            .sounds(BlockSoundGroup.WOOL)
+            .nonOpaque()
+            .pistonBehavior(PistonBehavior.DESTROY)));
+
+    public static final Block FAKE_SUSPICIOUS_SAND = register("fake_suspicious_sand", new Block(AbstractBlock.Settings.create()
+            .mapColor(MapColor.PALE_YELLOW)
+            .strength(0.25f)
+            .sounds(BlockSoundGroup.SUSPICIOUS_SAND)
+            .pistonBehavior(PistonBehavior.DESTROY)));
+
+    public static final Block FAKE_SUSPICIOUS_GRAVEL = register("fake_suspicious_gravel", new Block(AbstractBlock.Settings.create()
+            .mapColor(MapColor.STONE_GRAY)
+            .strength(0.25f)
+            .sounds(BlockSoundGroup.SUSPICIOUS_GRAVEL)
+            .pistonBehavior(PistonBehavior.DESTROY)));
+
+    public static final Block PEBBLE_BLOCK = register("pebble_block", new PebbleBlock(AbstractBlock.Settings.create()
+            .mapColor(MapColor.STONE_GRAY)
+            .strength(0.5f)
+            .sounds(BlockSoundGroup.STONE)
+            .nonOpaque()
+            .pistonBehavior(PistonBehavior.DESTROY)));
 
     private static AbstractBlock.Settings ornamentBlock() {
         return AbstractBlock.Settings.create().nonOpaque().noCollision().strength(0.25f).sounds(BlockSoundGroup.COPPER);
