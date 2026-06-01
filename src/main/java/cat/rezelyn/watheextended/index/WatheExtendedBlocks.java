@@ -1,45 +1,38 @@
 package cat.rezelyn.watheextended.index;
 
 import cat.rezelyn.watheextended.WatheExtended;
-import cat.rezelyn.watheextended.block.GreyiferPlushBlock;
-import cat.rezelyn.watheextended.block.IshPlushBlock;
-import cat.rezelyn.watheextended.block.PebbleBlock;
-import cat.rezelyn.watheextended.block.SandLayerBlock;
-import dev.doctor4t.wathe.block.OrnamentBlock;
-import dev.doctor4t.wathe.block.PanelBlock;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.LeavesBlock;
-import net.minecraft.block.MapColor;
-import net.minecraft.block.piston.PistonBehavior;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.sound.BlockSoundGroup;
+import cat.rezelyn.watheextended.block.*;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.Registry;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 
 public class WatheExtendedBlocks {
     // Panels
-    public static final Block TARNISHED_GOLD_PANEL = register("tarnished_gold_panel", new PanelBlock(AbstractBlock.Settings.create().nonOpaque().strength(0.2f).sounds(BlockSoundGroup.NETHERITE)));
-    public static final Block GOLD_PANEL = register("gold_panel", new PanelBlock(AbstractBlock.Settings.create().nonOpaque().strength(0.2f).sounds(BlockSoundGroup.NETHERITE)));
-    public static final Block PRISTINE_GOLD_PANEL = register("pristine_gold_panel", new PanelBlock(AbstractBlock.Settings.create().nonOpaque().strength(0.2f).sounds(BlockSoundGroup.NETHERITE)));
-    public static final Block BLACK_HULL_PANEL = register("black_hull_panel", new PanelBlock(AbstractBlock.Settings.create().nonOpaque().strength(0.2f).sounds(BlockSoundGroup.NETHERITE)));
-    public static final Block BLACK_HULL_SHEETS_PANEL = register("black_hull_sheets_panel", new PanelBlock(AbstractBlock.Settings.create().nonOpaque().strength(0.2f).sounds(BlockSoundGroup.COPPER)));
-    public static final Block METAL_SHEET_PANEL = register("metal_sheet_panel", new PanelBlock(AbstractBlock.Settings.create().nonOpaque().strength(0.2f).sounds(BlockSoundGroup.COPPER)));
-    public static final Block STAINLESS_STEEL_PANEL = register("stainless_steel_panel", new PanelBlock(AbstractBlock.Settings.create().nonOpaque().strength(0.2f).sounds(BlockSoundGroup.COPPER)));
-    public static final Block DARK_STEEL_PANEL = register("dark_steel_panel", new PanelBlock(AbstractBlock.Settings.create().nonOpaque().strength(0.2f).sounds(BlockSoundGroup.COPPER)));
-    public static final Block MARBLE_PANEL = register("marble_panel", new PanelBlock(AbstractBlock.Settings.create().nonOpaque().strength(0.2f).sounds(BlockSoundGroup.CALCITE)));
-    public static final Block DARK_MARBLE_PANEL = register("dark_marble_panel", new PanelBlock(AbstractBlock.Settings.create().nonOpaque().strength(0.2f).sounds(BlockSoundGroup.CALCITE)));
-    public static final Block MARBLE_TILES_PANEL = register("marble_tiles_panel", new PanelBlock(AbstractBlock.Settings.create().nonOpaque().strength(0.2f).sounds(BlockSoundGroup.CALCITE)));
-    public static final Block MAHOGANY_PLANKS_PANEL = register("mahogany_planks_panel", new PanelBlock(AbstractBlock.Settings.create().nonOpaque().strength(0.2f).sounds(BlockSoundGroup.WOOD)));
-    public static final Block MAHOGANY_HERRINGBONE_PANEL = register("mahogany_herringbone_panel", new PanelBlock(AbstractBlock.Settings.create().nonOpaque().strength(0.2f).sounds(BlockSoundGroup.WOOD)));
-    public static final Block MAHOGANY_BOOKSHELF_PANEL = register("mahogany_bookshelf_panel", new PanelBlock(AbstractBlock.Settings.create().nonOpaque().strength(0.2f).sounds(BlockSoundGroup.WOOD)));
-    public static final Block BUBINGA_PLANKS_PANEL = register("bubinga_planks_panel", new PanelBlock(AbstractBlock.Settings.create().nonOpaque().strength(0.2f).sounds(BlockSoundGroup.WOOD)));
-    public static final Block BUBINGA_HERRINGBONE_PANEL = register("bubinga_herringbone_panel", new PanelBlock(AbstractBlock.Settings.create().nonOpaque().strength(0.2f).sounds(BlockSoundGroup.WOOD)));
-    public static final Block BUBINGA_BOOKSHELF_PANEL = register("bubinga_bookshelf_panel", new PanelBlock(AbstractBlock.Settings.create().nonOpaque().strength(0.2f).sounds(BlockSoundGroup.WOOD)));
-    public static final Block EBONY_PLANKS_PANEL = register("ebony_planks_panel", new PanelBlock(AbstractBlock.Settings.create().nonOpaque().strength(0.2f).sounds(BlockSoundGroup.WOOD)));
-    public static final Block EBONY_HERRINGBONE_PANEL = register("ebony_herringbone_panel", new PanelBlock(AbstractBlock.Settings.create().nonOpaque().strength(0.2f).sounds(BlockSoundGroup.WOOD)));
-    public static final Block EBONY_BOOKSHELF_PANEL = register("ebony_bookshelf_panel", new PanelBlock(AbstractBlock.Settings.create().nonOpaque().strength(0.2f).sounds(BlockSoundGroup.WOOD)));
+    public static final Block TARNISHED_GOLD_PANEL = register("tarnished_gold_panel", new PanelBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.2f).sound(SoundType.NETHERITE_BLOCK)));
+    public static final Block GOLD_PANEL = register("gold_panel", new PanelBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.2f).sound(SoundType.NETHERITE_BLOCK)));
+    public static final Block PRISTINE_GOLD_PANEL = register("pristine_gold_panel", new PanelBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.2f).sound(SoundType.NETHERITE_BLOCK)));
+    public static final Block BLACK_HULL_PANEL = register("black_hull_panel", new PanelBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.2f).sound(SoundType.NETHERITE_BLOCK)));
+    public static final Block BLACK_HULL_SHEETS_PANEL = register("black_hull_sheets_panel", new PanelBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.2f).sound(SoundType.COPPER)));
+    public static final Block METAL_SHEET_PANEL = register("metal_sheet_panel", new PanelBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.2f).sound(SoundType.COPPER)));
+    public static final Block STAINLESS_STEEL_PANEL = register("stainless_steel_panel", new PanelBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.2f).sound(SoundType.COPPER)));
+    public static final Block DARK_STEEL_PANEL = register("dark_steel_panel", new PanelBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.2f).sound(SoundType.COPPER)));
+    public static final Block MARBLE_PANEL = register("marble_panel", new PanelBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.2f).sound(SoundType.CALCITE)));
+    public static final Block DARK_MARBLE_PANEL = register("dark_marble_panel", new PanelBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.2f).sound(SoundType.CALCITE)));
+    public static final Block MARBLE_TILES_PANEL = register("marble_tiles_panel", new PanelBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.2f).sound(SoundType.CALCITE)));
+    public static final Block MAHOGANY_PLANKS_PANEL = register("mahogany_planks_panel", new PanelBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.2f).sound(SoundType.WOOD)));
+    public static final Block MAHOGANY_HERRINGBONE_PANEL = register("mahogany_herringbone_panel", new PanelBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.2f).sound(SoundType.WOOD)));
+    public static final Block MAHOGANY_BOOKSHELF_PANEL = register("mahogany_bookshelf_panel", new PanelBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.2f).sound(SoundType.WOOD)));
+    public static final Block BUBINGA_PLANKS_PANEL = register("bubinga_planks_panel", new PanelBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.2f).sound(SoundType.WOOD)));
+    public static final Block BUBINGA_HERRINGBONE_PANEL = register("bubinga_herringbone_panel", new PanelBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.2f).sound(SoundType.WOOD)));
+    public static final Block BUBINGA_BOOKSHELF_PANEL = register("bubinga_bookshelf_panel", new PanelBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.2f).sound(SoundType.WOOD)));
+    public static final Block EBONY_PLANKS_PANEL = register("ebony_planks_panel", new PanelBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.2f).sound(SoundType.WOOD)));
+    public static final Block EBONY_HERRINGBONE_PANEL = register("ebony_herringbone_panel", new PanelBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.2f).sound(SoundType.WOOD)));
+    public static final Block EBONY_BOOKSHELF_PANEL = register("ebony_bookshelf_panel", new PanelBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.2f).sound(SoundType.WOOD)));
 
     // Ornaments
     public static final Block ANTHRACITE_STEEL_ORNAMENT = register("anthracite_steel_ornament", new OrnamentBlock(ornamentBlock()));
@@ -76,71 +69,37 @@ public class WatheExtendedBlocks {
     public static final Block SNOWY_FLOWERING_AZALEA_LEAVES = register("snowy_flowering_azalea_leaves", new LeavesBlock(leavesBlock()));
 
     // Plushies
-    public static final Block ISH_PLUSH = register("ish_plush", new IshPlushBlock(AbstractBlock.Settings.create().nonOpaque().strength(0.5f).sounds(BlockSoundGroup.WOOL)));
+    public static final Block ISH_PLUSH = register("ish_plush", new IshPlushBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.WOOL)));
 
     // gexpress decorative blocks
-    public static final Block SAND_LAYER = register("sand_layer", new SandLayerBlock(AbstractBlock.Settings.create()
-            .mapColor(MapColor.PALE_YELLOW)
-            .replaceable()
-            .strength(0.5f)
-            .sounds(BlockSoundGroup.SAND)
-            .pistonBehavior(PistonBehavior.DESTROY)));
+    public static final Block SAND_LAYER = register("sand_layer", new SandLayerBlock(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.SAND).replaceable().strength(0.5f).sound(SoundType.SAND).pushReaction(PushReaction.DESTROY)));
+    public static final Block RED_SAND_LAYER = register("red_sand_layer", new SandLayerBlock(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_ORANGE).replaceable().strength(0.5f).sound(SoundType.SAND).pushReaction(PushReaction.DESTROY)));
+    public static final Block GREYIFER_PLUSH = register("greyifer_plush", new GreyiferPlushBlock(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_BLACK).strength(0.5f).sound(SoundType.WOOL).noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final Block IWY_PLUSH = register("iwy_plush", new GreyiferPlushBlock(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.SNOW).strength(0.5f).sound(SoundType.WOOL).noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final Block FAKE_SUSPICIOUS_SAND = register("fake_suspicious_sand", new Block(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.SAND).strength(0.25f).sound(SoundType.SUSPICIOUS_SAND).pushReaction(PushReaction.DESTROY)));
+    public static final Block FAKE_SUSPICIOUS_GRAVEL = register("fake_suspicious_gravel", new Block(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.STONE).strength(0.25f).sound(SoundType.SUSPICIOUS_GRAVEL).pushReaction(PushReaction.DESTROY)));
+    public static final Block PEBBLE_BLOCK = register("pebble_block", new PebbleBlock(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.STONE).strength(0.5f).sound(SoundType.STONE).noOcclusion().pushReaction(PushReaction.DESTROY)));
 
-    public static final Block RED_SAND_LAYER = register("red_sand_layer", new SandLayerBlock(AbstractBlock.Settings.create()
-            .mapColor(MapColor.ORANGE)
-            .replaceable()
-            .strength(0.5f)
-            .sounds(BlockSoundGroup.SAND)
-            .pistonBehavior(PistonBehavior.DESTROY)));
-
-    public static final Block GREYIFER_PLUSH = register("greyifer_plush", new GreyiferPlushBlock(AbstractBlock.Settings.create()
-            .mapColor(MapColor.BLACK)
-            .strength(0.5f)
-            .sounds(BlockSoundGroup.WOOL)
-            .nonOpaque()
-            .pistonBehavior(PistonBehavior.DESTROY)));
-
-    public static final Block IWY_PLUSH = register("iwy_plush", new GreyiferPlushBlock(AbstractBlock.Settings.create()
-            .mapColor(MapColor.WHITE)
-            .strength(0.5f)
-            .sounds(BlockSoundGroup.WOOL)
-            .nonOpaque()
-            .pistonBehavior(PistonBehavior.DESTROY)));
-
-    public static final Block FAKE_SUSPICIOUS_SAND = register("fake_suspicious_sand", new Block(AbstractBlock.Settings.create()
-            .mapColor(MapColor.PALE_YELLOW)
-            .strength(0.25f)
-            .sounds(BlockSoundGroup.SUSPICIOUS_SAND)
-            .pistonBehavior(PistonBehavior.DESTROY)));
-
-    public static final Block FAKE_SUSPICIOUS_GRAVEL = register("fake_suspicious_gravel", new Block(AbstractBlock.Settings.create()
-            .mapColor(MapColor.STONE_GRAY)
-            .strength(0.25f)
-            .sounds(BlockSoundGroup.SUSPICIOUS_GRAVEL)
-            .pistonBehavior(PistonBehavior.DESTROY)));
-
-    public static final Block PEBBLE_BLOCK = register("pebble_block", new PebbleBlock(AbstractBlock.Settings.create()
-            .mapColor(MapColor.STONE_GRAY)
-            .strength(0.5f)
-            .sounds(BlockSoundGroup.STONE)
-            .nonOpaque()
-            .pistonBehavior(PistonBehavior.DESTROY)));
-
-    private static AbstractBlock.Settings ornamentBlock() {
-        return AbstractBlock.Settings.create().nonOpaque().noCollision().strength(0.25f).sounds(BlockSoundGroup.COPPER);
+    private static BlockBehaviour.Properties ornamentBlock() {
+        return BlockBehaviour.Properties.of().noOcclusion().noCollission().strength(0.25f).sound(SoundType.COPPER);
     }
-
-    private static AbstractBlock.Settings moquetteBlock() {
-        return AbstractBlock.Settings.create().strength(0.5f).sounds(BlockSoundGroup.WOOL);
+    private static BlockBehaviour.Properties moquetteBlock() {
+        return BlockBehaviour.Properties.of().strength(0.5f).sound(SoundType.WOOL);
     }
-
-    private static AbstractBlock.Settings leavesBlock() {
-        return AbstractBlock.Settings.create().nonOpaque().ticksRandomly().strength(0.2f).sounds(BlockSoundGroup.GRASS);
+    private static BlockBehaviour.Properties leavesBlock() {
+        return BlockBehaviour.Properties.of().noOcclusion().randomTicks().strength(0.2f).sound(SoundType.GRASS);
     }
 
     private static <T extends Block> T register(String id, T block) {
-        Registry.register(Registries.BLOCK, WatheExtended.id(id), block);
-        Registry.register(Registries.ITEM, WatheExtended.id(id), new BlockItem(block, new Item.Settings()));
+        Registry.register(BuiltInRegistries.BLOCK, WatheExtended.id(id), block);
+        Registry.register(BuiltInRegistries.ITEM, WatheExtended.id(id), new BlockItem(block, new Item.Properties()));
         return block;
     }
 

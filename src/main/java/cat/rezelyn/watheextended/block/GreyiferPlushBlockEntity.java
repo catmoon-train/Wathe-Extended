@@ -1,16 +1,15 @@
 package cat.rezelyn.watheextended.block;
 
 import cat.rezelyn.watheextended.index.WatheExtendedBlockEntities;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.network.listener.ClientPlayPacketListener;
-import net.minecraft.network.packet.Packet;
-import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
 
 public class GreyiferPlushBlockEntity extends BlockEntity {
     public double squash;
@@ -19,45 +18,40 @@ public class GreyiferPlushBlockEntity extends BlockEntity {
         super(WatheExtendedBlockEntities.GREYIFER_PLUSH, pos, state);
     }
 
-    public static void tick(World world, BlockPos pos, BlockState state, GreyiferPlushBlockEntity entity) {
+    public static void tick(Level world, BlockPos pos, BlockState state, GreyiferPlushBlockEntity entity) {
         if (entity.squash <= 0.0D) return;
-
         entity.squash /= 3.0D;
         if (entity.squash < 0.01D) {
             entity.squash = 0.0D;
-            if (world != null) {
-                world.updateListeners(pos, state, state, Block.NOTIFY_LISTENERS);
-            }
+            if (world != null) world.sendBlockUpdated(pos, state, state, Block.UPDATE_CLIENTS);
         }
     }
 
     public void squish(int amount) {
         this.squash += amount;
-        if (this.world != null) {
-            this.world.updateListeners(this.pos, this.getCachedState(), this.getCachedState(), Block.NOTIFY_LISTENERS);
-        }
-        this.markDirty();
+        if (this.level != null) this.level.sendBlockUpdated(this.worldPosition, this.getBlockState(), this.getBlockState(), Block.UPDATE_CLIENTS);
+        this.setChanged();
     }
 
     @Override
-    protected void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
-        super.writeNbt(nbt, registryLookup);
+    protected void saveAdditional(CompoundTag nbt, net.minecraft.core.HolderLookup.Provider registries) {
+        super.saveAdditional(nbt, registries);
         nbt.putDouble("squash", this.squash);
     }
 
     @Override
-    protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
-        super.readNbt(nbt, registryLookup);
+    protected void loadAdditional(CompoundTag nbt, net.minecraft.core.HolderLookup.Provider registries) {
+        super.loadAdditional(nbt, registries);
         this.squash = nbt.getDouble("squash");
     }
 
     @Override
-    public Packet<ClientPlayPacketListener> toUpdatePacket() {
-        return BlockEntityUpdateS2CPacket.create(this);
+    public Packet<ClientGamePacketListener> getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
     }
 
     @Override
-    public NbtCompound toInitialChunkDataNbt(RegistryWrapper.WrapperLookup registryLookup) {
-        return this.createNbt(registryLookup);
+    public CompoundTag getUpdateTag(net.minecraft.core.HolderLookup.Provider registries) {
+        return this.saveWithoutMetadata(registries);
     }
 }

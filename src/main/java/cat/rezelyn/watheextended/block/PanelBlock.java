@@ -1,53 +1,53 @@
 package cat.rezelyn.watheextended.block;
 
 import com.mojang.serialization.MapCodec;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.MultifaceBlock;
-import net.minecraft.block.MultifaceSpreader;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.WorldAccess;
-import net.minecraft.world.WorldView;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.MultifaceBlock;
+import net.minecraft.world.level.block.MultifaceSpreader;
+import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.Arrays;
 
 /**
- * Panel block based on StarRailExpress's PanelBlock
+ * Panel block equivalent to StarRailExpress's PanelBlock
  * (io.wifi.starrailexpress.content.block.PanelBlock).
  */
 public class PanelBlock extends MultifaceBlock {
 
-    public PanelBlock(Settings settings) {
+    public PanelBlock(Properties settings) {
         super(settings);
     }
 
     @Override
-    protected MapCodec<? extends MultifaceBlock> getCodec() {
+    protected MapCodec<? extends MultifaceBlock> codec() {
         return null;
     }
 
     @Override
-    public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
+    public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
         return true;
     }
 
     @Override
-    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor world, BlockPos pos, BlockPos neighborPos) {
         return state;
     }
 
     @Override
-    public boolean isValidStateForPlacement(BlockView world, BlockState state, BlockPos pos, Direction direction) {
-        return this.isFaceSupported(direction) && (!state.isOf(this) || !hasFace(state, direction));
+    public boolean isValidStateForPlacement(BlockGetter world, BlockState state, BlockPos pos, Direction direction) {
+        return this.isFaceSupported(direction) && (!state.is(this) || !hasFace(state, direction));
     }
 
     @Override
-    public boolean canReplace(BlockState state, ItemPlacementContext context) {
-        return context.getStack().isOf(this.asItem())
+    public boolean canBeReplaced(BlockState state, BlockPlaceContext context) {
+        return context.getItemInHand().is(this.asItem())
                 && Arrays.stream(DIRECTIONS).anyMatch(direction -> !hasFace(state, direction))
-                && !context.shouldCancelInteraction();
+                && !context.isSecondaryUseActive();
     }
 
     @Override

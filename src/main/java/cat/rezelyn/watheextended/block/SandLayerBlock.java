@@ -1,10 +1,7 @@
 package cat.rezelyn.watheextended.block;
 
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.SnowBlock;
+import net.minecraft.world.level.block.SnowLayerBlock;
 
-public class SandLayerBlock extends SnowBlock {
-    public SandLayerBlock(AbstractBlock.Settings settings) {
-        super(settings);
-    }
+public class SandLayerBlock extends SnowLayerBlock {
+    public SandLayerBlock(Properties settings) { super(settings); }
 }

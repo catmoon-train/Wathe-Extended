@@ -1,48 +1,42 @@
 package cat.rezelyn.watheextended.client.render;
 
 import cat.rezelyn.watheextended.block.GreyiferPlushBlockEntity;
-import net.minecraft.block.BlockState;
-import net.minecraft.client.render.RenderLayers;
-import net.minecraft.client.render.VertexConsumerProvider;
-import net.minecraft.client.render.block.BlockRenderManager;
-import net.minecraft.client.render.block.entity.BlockEntityRenderer;
-import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
-import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.util.math.MathHelper;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.block.BlockRenderDispatcher;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
+import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.util.Mth;
+import net.minecraft.world.level.block.state.BlockState;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.renderer.MultiBufferSource;
 
 public class GreyiferPlushBlockEntityRenderer implements BlockEntityRenderer<GreyiferPlushBlockEntity> {
-    private final BlockRenderManager renderManager;
+    private final BlockRenderDispatcher renderManager;
 
-    public GreyiferPlushBlockEntityRenderer(BlockEntityRendererFactory.Context context) {
-        this.renderManager = context.getRenderManager();
+    public GreyiferPlushBlockEntityRenderer(BlockEntityRendererProvider.Context context) {
+        this.renderManager = context.getBlockRenderDispatcher();
     }
 
     @Override
-    public void render(GreyiferPlushBlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider consumers, int light, int overlay) {
-        matrices.push();
+    public void render(GreyiferPlushBlockEntity entity, float tickDelta, PoseStack matrices, MultiBufferSource consumers, int light, int overlay) {
+        matrices.pushPose();
 
         double squash = entity.squash;
         double previousSquash = squash * 3.0D;
-        float squeeze = (float) Math.pow(1.0D - 1.0D / (1.0D + MathHelper.lerp(tickDelta, previousSquash, squash)), 2.0D);
+        float squeeze = (float) Math.pow(1.0D - 1.0D / (1.0D + Mth.lerp(tickDelta, previousSquash, squash)), 2.0D);
 
         matrices.scale(1.0F, 1.0F - squeeze, 1.0F);
         matrices.translate(0.5D, 0.0D, 0.5D);
         matrices.scale(1.0F + squeeze / 2.0F, 1.0F, 1.0F + squeeze / 2.0F);
         matrices.translate(-0.5D, 0.0D, -0.5D);
 
-        BlockState state = entity.getCachedState();
-        this.renderManager.getModelRenderer().render(
-            matrices.peek(),
-            consumers.getBuffer(RenderLayers.getEntityBlockLayer(state, false)),
-            state,
-            this.renderManager.getModel(state),
-            1.0F,
-            1.0F,
-            1.0F,
-            light,
-            overlay
+        BlockState state = entity.getBlockState();
+        this.renderManager.getModelRenderer().renderModel(
+            matrices.last(), consumers.getBuffer(RenderType.cutout()), state,
+            this.renderManager.getBlockModel(state), 1.0F, 1.0F, 1.0F, light, overlay
         );
 
-        matrices.pop();
+        matrices.popPose();
     }
 }

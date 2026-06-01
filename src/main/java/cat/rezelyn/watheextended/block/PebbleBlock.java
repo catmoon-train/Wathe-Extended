@@ -1,86 +1,56 @@
 package cat.rezelyn.watheextended.block;
 
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ShapeContext;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.DirectionProperty;
-import net.minecraft.state.property.IntProperty;
-import net.minecraft.state.property.Properties;
-import net.minecraft.util.BlockMirror;
-import net.minecraft.util.BlockRotation;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
-import net.minecraft.world.BlockView;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Mirror;
+import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class PebbleBlock extends Block {
-    public static final IntProperty PEBBLES = IntProperty.of("pebbles", 1, 4);
-    public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
+    public static final IntegerProperty PEBBLES = IntegerProperty.create("pebbles", 1, 4);
+    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
-    private static final VoxelShape ONE_PEBBLE_SHAPE = Block.createCuboidShape(5.0, 0.0, 5.0, 11.0, 3.0, 11.0);
-    private static final VoxelShape TWO_PEBBLES_SHAPE = VoxelShapes.union(
-        Block.createCuboidShape(3.0, 0.0, 6.0, 8.0, 3.0, 11.0),
-        Block.createCuboidShape(9.0, 0.0, 4.0, 13.0, 2.5, 8.0)
-    );
-    private static final VoxelShape THREE_PEBBLES_SHAPE = VoxelShapes.union(
-        TWO_PEBBLES_SHAPE,
-        Block.createCuboidShape(7.0, 0.0, 9.0, 12.0, 2.0, 14.0)
-    );
-    private static final VoxelShape FOUR_PEBBLES_SHAPE = VoxelShapes.union(
-        THREE_PEBBLES_SHAPE,
-        Block.createCuboidShape(5.0, 0.0, 2.0, 10.0, 2.5, 7.0)
-    );
+    private static final VoxelShape ONE = box(5, 0, 5, 11, 3, 11);
+    private static final VoxelShape TWO = Shapes.or(box(3, 0, 6, 8, 3, 11), box(9, 0, 4, 13, 2.5, 8));
+    private static final VoxelShape THREE = Shapes.or(TWO, box(7, 0, 9, 12, 2, 14));
+    private static final VoxelShape FOUR = Shapes.or(THREE, box(5, 0, 2, 10, 2.5, 7));
 
-    public PebbleBlock(AbstractBlock.Settings settings) {
+    public PebbleBlock(Properties settings) {
         super(settings);
-        this.setDefaultState(this.stateManager.getDefaultState()
-            .with(PEBBLES, 1)
-            .with(FACING, Direction.NORTH));
+        this.registerDefaultState(this.stateDefinition.any().setValue(PEBBLES, 1).setValue(FACING, Direction.NORTH));
     }
 
     @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        BlockState state = ctx.getWorld().getBlockState(ctx.getBlockPos());
-        if (state.isOf(this)) {
-            return state.with(PEBBLES, Math.min(4, state.get(PEBBLES) + 1));
-        }
-        return this.getDefaultState().with(FACING, Direction.fromHorizontal(ctx.getWorld().random.nextInt(4)));
+    public BlockState getStateForPlacement(BlockPlaceContext ctx) {
+        BlockState state = ctx.getLevel().getBlockState(ctx.getClickedPos());
+        if (state.is(this)) return state.setValue(PEBBLES, Math.min(4, state.getValue(PEBBLES) + 1));
+        return this.defaultBlockState().setValue(FACING, Direction.from2DDataValue(ctx.getLevel().random.nextInt(4)));
     }
 
     @Override
-    protected boolean canReplace(BlockState state, ItemPlacementContext context) {
-        return !context.shouldCancelInteraction()
-            && context.getStack().isOf(this.asItem())
-            && state.get(PEBBLES) < 4
-            || super.canReplace(state, context);
+    protected boolean canBeReplaced(BlockState state, BlockPlaceContext context) {
+        return !context.isSecondaryUseActive() && context.getItemInHand().is(this.asItem()) && state.getValue(PEBBLES) < 4 || super.canBeReplaced(state, context);
     }
 
     @Override
-    protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return switch (state.get(PEBBLES)) {
-            case 2 -> TWO_PEBBLES_SHAPE;
-            case 3 -> THREE_PEBBLES_SHAPE;
-            case 4 -> FOUR_PEBBLES_SHAPE;
-            default -> ONE_PEBBLE_SHAPE;
-        };
+    protected VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        return switch (state.getValue(PEBBLES)) { case 2 -> TWO; case 3 -> THREE; case 4 -> FOUR; default -> ONE; };
     }
 
     @Override
-    protected BlockState rotate(BlockState state, BlockRotation rotation) {
-        return state.with(FACING, rotation.rotate(state.get(FACING)));
-    }
-
+    protected BlockState rotate(BlockState state, Rotation rotation) { return state.setValue(FACING, rotation.rotate(state.getValue(FACING))); }
     @Override
-    protected BlockState mirror(BlockState state, BlockMirror mirror) {
-        return state.rotate(mirror.getRotation(state.get(FACING)));
-    }
-
+    protected BlockState mirror(BlockState state, Mirror mirror) { return state.rotate(mirror.getRotation(state.getValue(FACING))); }
     @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(PEBBLES, FACING);
-    }
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) { builder.add(PEBBLES, FACING); }
 }

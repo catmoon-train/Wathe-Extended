@@ -1,29 +1,29 @@
 package cat.rezelyn.watheextended.block;
 
 import com.mojang.serialization.MapCodec;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ShapeContext;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.DirectionProperty;
-import net.minecraft.state.property.EnumProperty;
-import net.minecraft.state.property.Properties;
-import net.minecraft.util.StringIdentifiable;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
-import net.minecraft.world.BlockView;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 /**
- * Ornament block matching wathe's OrnamentBlock blockstate properties
- * (facing + shape), compatible with existing multipart model JSONs.
+ * Ornament block compatible with existing multipart model JSONs
+ * (facing + shape properties).
  */
 public class OrnamentBlock extends Block {
-    public static final DirectionProperty FACING = Properties.FACING;
-    public static final EnumProperty<Shape> SHAPE = EnumProperty.of("shape", Shape.class);
+    public static final DirectionProperty FACING = BlockStateProperties.FACING;
+    public static final EnumProperty<Shape> SHAPE = EnumProperty.create("shape", Shape.class);
 
-    public enum Shape implements StringIdentifiable {
+    public enum Shape implements StringRepresentable {
         ALL("all"), BOTTOM("bottom"), CENTER("center"),
         LEFT("left"), LEFT_BOTTOM("left_bottom"),
         LEFT_RIGHT("left_right"), LEFT_RIGHT_BOTTOM("left_right_bottom"),
@@ -35,28 +35,28 @@ public class OrnamentBlock extends Block {
 
         private final String id;
         Shape(String id) { this.id = id; }
-        @Override public String asString() { return id; }
+        @Override public String getSerializedName() { return id; }
     }
 
-    public OrnamentBlock(AbstractBlock.Settings settings) {
+    public OrnamentBlock(Properties settings) {
         super(settings);
-        this.setDefaultState(this.stateManager.getDefaultState()
-                .with(FACING, net.minecraft.util.math.Direction.NORTH)
-                .with(SHAPE, Shape.ALL));
+        this.registerDefaultState(this.stateDefinition.any()
+                .setValue(FACING, Direction.NORTH)
+                .setValue(SHAPE, Shape.ALL));
     }
 
     @Override
-    protected MapCodec<? extends Block> getCodec() {
+    protected MapCodec<? extends Block> codec() {
         return null;
     }
 
     @Override
-    protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return VoxelShapes.empty();
+    protected VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        return Shapes.empty();
     }
 
     @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING, SHAPE);
     }
 }
