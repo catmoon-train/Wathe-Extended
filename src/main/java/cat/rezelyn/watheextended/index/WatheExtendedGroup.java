@@ -79,6 +79,8 @@ public class WatheExtendedGroup {
                     entries.accept(WatheExtendedBlocks.PEBBLE_BLOCK);
                     entries.accept(WatheExtendedBlocks.FAKE_SUSPICIOUS_SAND);
                     entries.accept(WatheExtendedBlocks.FAKE_SUSPICIOUS_GRAVEL);
+                    entries.accept(WatheExtendedBlocks.PIZZA);
+                    entries.accept(WatheExtendedBlocks.MUSIC_DISC_BOX);
 
                     entries.accept(WatheExtendedItems.COTTON_CANDY_SHAKE);
                     entries.accept(WatheExtendedItems.GALAXY_FIZZ);

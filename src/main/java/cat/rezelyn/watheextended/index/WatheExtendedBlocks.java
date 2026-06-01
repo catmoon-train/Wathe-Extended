@@ -87,6 +87,10 @@ public class WatheExtendedBlocks {
     public static final Block PEBBLE_BLOCK = register("pebble_block", new PebbleBlock(BlockBehaviour.Properties.of()
             .mapColor(MapColor.STONE).strength(0.5f).sound(SoundType.STONE).noOcclusion().pushReaction(PushReaction.DESTROY)));
 
+    // Pizza & Music Disc Box
+    public static final Block PIZZA = register("pizza", new PizzaBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.MUD)));
+    public static final Block MUSIC_DISC_BOX = register("music_disc_box", new MusicDiscBoxBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.WOOD)));
+
     private static BlockBehaviour.Properties ornamentBlock() {
         return BlockBehaviour.Properties.of().noOcclusion().noCollission().strength(0.25f).sound(SoundType.COPPER);
     }
