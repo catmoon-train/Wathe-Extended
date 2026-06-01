@@ -17,7 +17,6 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
@@ -29,6 +28,14 @@ import org.jetbrains.annotations.Nullable;
 public class OrnamentBlock extends DirectionalBlock {
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
     public static final EnumProperty<Shape> SHAPE = EnumProperty.create("shape", Shape.class);
+
+    // Thin panel shapes per direction (1 pixel thick for visual targeting)
+    private static final VoxelShape SHAPE_DOWN  = box(0, 15, 0, 16, 16, 16);
+    private static final VoxelShape SHAPE_UP    = box(0, 0, 0, 16, 1, 16);
+    private static final VoxelShape SHAPE_NORTH = box(0, 0, 15, 16, 16, 16);
+    private static final VoxelShape SHAPE_SOUTH = box(0, 0, 0, 16, 16, 1);
+    private static final VoxelShape SHAPE_WEST  = box(15, 0, 0, 16, 16, 16);
+    private static final VoxelShape SHAPE_EAST  = box(0, 0, 0, 1, 16, 16);
 
     public enum Shape implements StringRepresentable {
         ALL("all"), BOTTOM("bottom"), CENTER("center"),
@@ -97,7 +104,14 @@ public class OrnamentBlock extends DirectionalBlock {
 
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        return Shapes.empty();
+        return switch (state.getValue(FACING)) {
+            case DOWN  -> SHAPE_DOWN;
+            case UP    -> SHAPE_UP;
+            case NORTH -> SHAPE_NORTH;
+            case SOUTH -> SHAPE_SOUTH;
+            case WEST  -> SHAPE_WEST;
+            case EAST  -> SHAPE_EAST;
+        };
     }
 
     @Override
