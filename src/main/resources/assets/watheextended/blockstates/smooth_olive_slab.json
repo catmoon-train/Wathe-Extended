@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "watheextended:block/smooth_olive_slab"
+    },
+    "type=double": {
+      "model": "watheextended:block/smooth_olive"
+    },
+    "type=top": {
+      "model": "watheextended:block/smooth_olive_slab_top"
+    }
+  }
+}

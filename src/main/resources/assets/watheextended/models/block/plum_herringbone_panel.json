@@ -1,0 +1,7 @@
+{
+  "parent": "watheextended:block/template_panel",
+  "textures": {
+    "all": "watheextended:block/plum_herringbone"
+  }
+}
+

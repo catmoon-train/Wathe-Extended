@@ -1,0 +1,9 @@
+{
+  "parent": "watheextended:block/template_cabinet",
+  "textures": {
+    "bottom": "watheextended:block/acacia_cabinet_bottom",
+    "front": "watheextended:block/acacia_cabinet_front",
+    "side": "watheextended:block/acacia_cabinet_side",
+    "top": "watheextended:block/acacia_cabinet_top"
+  }
+}

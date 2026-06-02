@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "watheextended:block/smooth_plum",
+    "side": "watheextended:block/smooth_plum",
+    "top": "watheextended:block/smooth_plum"
+  }
+}
+

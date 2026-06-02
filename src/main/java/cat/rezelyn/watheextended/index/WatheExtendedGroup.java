@@ -82,6 +82,27 @@ public class WatheExtendedGroup {
                     entries.accept(WatheExtendedBlocks.PIZZA);
                     entries.accept(WatheExtendedBlocks.MUSIC_DISC_BOX);
 
+                    // SRE decorative blocks
+                    entries.accept(WatheExtendedBlocks.GOLD_LEDGE);
+                    entries.accept(WatheExtendedBlocks.ANTHRACITE_LEDGE);
+                    entries.accept(WatheExtendedBlocks.KHAKI_LEDGE);
+                    entries.accept(WatheExtendedBlocks.MAROON_LEDGE);
+                    entries.accept(WatheExtendedBlocks.MUNTZ_LEDGE);
+                    entries.accept(WatheExtendedBlocks.NAVY_LEDGE);
+                    entries.accept(WatheExtendedBlocks.MAHOGANY_CABINET);
+                    entries.accept(WatheExtendedBlocks.BUBINGA_CABINET);
+                    entries.accept(WatheExtendedBlocks.EBONY_CABINET);
+                    entries.accept(WatheExtendedBlocks.ACACIA_CABINET);
+                    entries.accept(WatheExtendedBlocks.BIRCH_CABINET);
+                    entries.accept(WatheExtendedBlocks.CHERRY_CABINET);
+                    entries.accept(WatheExtendedBlocks.DARK_OAK_CABINET);
+                    entries.accept(WatheExtendedBlocks.JUNGLE_CABINET);
+                    entries.accept(WatheExtendedBlocks.MANGROVE_CABINET);
+                    entries.accept(WatheExtendedBlocks.OAK_CABINET);
+                    entries.accept(WatheExtendedBlocks.SPRUCE_CABINET);
+                    entries.accept(WatheExtendedBlocks.GOLD_FOOD_PLATTER);
+                    entries.accept(WatheExtendedBlocks.GOLD_DRINK_TRAY);
+
                     entries.accept(WatheExtendedItems.COTTON_CANDY_SHAKE);
                     entries.accept(WatheExtendedItems.GALAXY_FIZZ);
                     entries.accept(WatheExtendedItems.HONEY_LEMONADE);

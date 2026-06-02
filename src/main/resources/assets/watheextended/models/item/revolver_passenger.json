@@ -1,0 +1,7 @@
+{
+	"parent": "watheextended:item/revolver_base",
+	"textures": {
+		"0": "watheextended:item/revolver_passenger",
+		"particle": "watheextended:item/revolver_passenger"
+	}
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "watheextended:block/template_floor_ledge",
+  "textures": {
+    "texture": "watheextended:block/navy_ledge"
+  }
+}

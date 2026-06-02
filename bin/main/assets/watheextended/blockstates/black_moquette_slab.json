@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "watheextended:block/black_moquette_slab"
+    },
+    "type=double": {
+      "model": "watheextended:block/black_moquette"
+    },
+    "type=top": {
+      "model": "watheextended:block/black_moquette_slab_top"
+    }
+  }
+}

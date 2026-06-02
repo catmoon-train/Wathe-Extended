@@ -1,3 +1,6 @@
 {
-  "parent": "watheextended:block/khaki_steel_ornament_all"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "watheextended:item/khaki_steel_ornament"
+  }
 }
