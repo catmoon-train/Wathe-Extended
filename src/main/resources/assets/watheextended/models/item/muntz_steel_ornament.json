@@ -1,6 +1,1 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "wathe:item/muntz_steel_ornament"
-  }
-}
+{"parent":"item/generated","textures":{"layer0":"watheextended:item/muntz_steel_ornament"}}

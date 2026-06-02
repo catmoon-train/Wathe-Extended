@@ -1,6 +1,1 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "wathe:block/bubinga_herringbone"
-  }
-}
+{"parent":"item/generated","textures":{"layer0":"wathe:block/bubinga_herringbone"}}

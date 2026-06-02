@@ -1,6 +1,1 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "wathe:block/dark_marble"
-  }
-}
+{"parent":"item/generated","textures":{"layer0":"wathe:block/dark_marble"}}

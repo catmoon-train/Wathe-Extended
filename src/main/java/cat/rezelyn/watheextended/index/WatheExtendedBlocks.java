@@ -157,10 +157,10 @@ public class WatheExtendedBlocks {
     public static final Block BLACK_MOQUETTE_STAIRS = register("black_moquette_stairs", new StairBlock(BLACK_MOQUETTE.defaultBlockState(), moquetteBlock()));
     public static final Block BLUE_MOQUETTE_PANEL = register("blue_moquette_panel", new PanelBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.2f).sound(SoundType.WOOL)));
     public static final Block BLUE_MOQUETTE_SLAB = register("blue_moquette_slab", new SlabBlock(moquetteBlock()));
-    public static final Block BLUE_MOQUETTE_STAIRS = register("blue_moquette_stairs", new StairBlock(BlockBehaviour.Properties.of().strength(0.5f).sound(SoundType.WOOL).defaultBlockState(), moquetteBlock()));
+    public static final Block BLUE_MOQUETTE_STAIRS = register("blue_moquette_stairs", new StairBlock(Blocks.OAK_PLANKS.defaultBlockState(), moquetteBlock()));
     public static final Block BROWN_MOQUETTE_PANEL = register("brown_moquette_panel", new PanelBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.2f).sound(SoundType.WOOL)));
     public static final Block BROWN_MOQUETTE_SLAB = register("brown_moquette_slab", new SlabBlock(moquetteBlock()));
-    public static final Block BROWN_MOQUETTE_STAIRS = register("brown_moquette_stairs", new StairBlock(BlockBehaviour.Properties.of().strength(0.5f).sound(SoundType.WOOL).defaultBlockState(), moquetteBlock()));
+    public static final Block BROWN_MOQUETTE_STAIRS = register("brown_moquette_stairs", new StairBlock(Blocks.OAK_PLANKS.defaultBlockState(), moquetteBlock()));
     public static final Block GREEN_MOQUETTE_PANEL = register("green_moquette_panel", new PanelBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.2f).sound(SoundType.WOOL)));
     public static final Block GREEN_MOQUETTE_SLAB = register("green_moquette_slab", new SlabBlock(moquetteBlock()));
     public static final Block GREEN_MOQUETTE_STAIRS = register("green_moquette_stairs", new StairBlock(GREEN_MOQUETTE.defaultBlockState(), moquetteBlock()));
@@ -169,7 +169,7 @@ public class WatheExtendedBlocks {
     public static final Block PURPLE_MOQUETTE_STAIRS = register("purple_moquette_stairs", new StairBlock(PURPLE_MOQUETTE.defaultBlockState(), moquetteBlock()));
     public static final Block RED_MOQUETTE_PANEL = register("red_moquette_panel", new PanelBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.2f).sound(SoundType.WOOL)));
     public static final Block RED_MOQUETTE_SLAB = register("red_moquette_slab", new SlabBlock(moquetteBlock()));
-    public static final Block RED_MOQUETTE_STAIRS = register("red_moquette_stairs", new StairBlock(BlockBehaviour.Properties.of().strength(0.5f).sound(SoundType.WOOL).defaultBlockState(), moquetteBlock()));
+    public static final Block RED_MOQUETTE_STAIRS = register("red_moquette_stairs", new StairBlock(Blocks.OAK_PLANKS.defaultBlockState(), moquetteBlock()));
 
     // Additional Plushies
     public static final Block LUX_PLUSH = register("lux_plush", new GreyiferPlushBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY)));
