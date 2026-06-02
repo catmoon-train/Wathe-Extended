@@ -98,9 +98,6 @@ public class WatheExtendedBlocks {
     public static final Block MAROON_LEDGE = register("maroon_ledge", new LedgeBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.METAL)));
     public static final Block MUNTZ_LEDGE = register("muntz_ledge", new LedgeBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.METAL)));
     public static final Block NAVY_LEDGE = register("navy_ledge", new LedgeBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.METAL)));
-    public static final Block MAHOGANY_CABINET = register("mahogany_cabinet", new CabinetBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.WOOD)));
-    public static final Block BUBINGA_CABINET = register("bubinga_cabinet", new CabinetBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.WOOD)));
-    public static final Block EBONY_CABINET = register("ebony_cabinet", new CabinetBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.WOOD)));
     public static final Block ACACIA_CABINET = register("acacia_cabinet", new CabinetBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.WOOD)));
     public static final Block BIRCH_CABINET = register("birch_cabinet", new CabinetBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.WOOD)));
     public static final Block CHERRY_CABINET = register("cherry_cabinet", new CabinetBlock(BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.WOOD)));

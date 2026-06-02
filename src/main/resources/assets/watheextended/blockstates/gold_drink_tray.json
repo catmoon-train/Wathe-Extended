@@ -1,34 +1,8 @@
 {
-	"variants": {
-		"facing=north,paid=false": {
-			"model": "watheextended:block/gold_drink_tray"
-		},
-		"facing=north,paid=true": {
-			"model": "watheextended:block/gold_drink_tray"
-		},
-		"facing=east,paid=false": {
-			"model": "watheextended:block/gold_drink_tray",
-			"y": 90
-		},
-		"facing=east,paid=true": {
-			"model": "watheextended:block/gold_drink_tray",
-			"y": 90
-		},
-		"facing=south,paid=false": {
-			"model": "watheextended:block/gold_drink_tray",
-			"y": 180
-		},
-		"facing=south,paid=true": {
-			"model": "watheextended:block/gold_drink_tray",
-			"y": 180
-		},
-		"facing=west,paid=false": {
-			"model": "watheextended:block/gold_drink_tray",
-			"y": 270
-		},
-		"facing=west,paid=true": {
-			"model": "watheextended:block/gold_drink_tray",
-			"y": 270
-		}
-	}
+  "variants": {
+    "facing=north": { "model": "watheextended:block/gold_drink_tray" },
+    "facing=east":  { "model": "watheextended:block/gold_drink_tray", "y": 90 },
+    "facing=south": { "model": "watheextended:block/gold_drink_tray", "y": 180 },
+    "facing=west":  { "model": "watheextended:block/gold_drink_tray", "y": 270 }
+  }
 }

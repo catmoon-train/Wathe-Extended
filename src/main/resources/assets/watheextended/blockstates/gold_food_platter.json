@@ -1,10 +1,5 @@
 {
-	"variants": {
-		"paid=false": {
-			"model": "watheextended:block/gold_food_platter"
-		},
-		"paid=true": {
-			"model": "watheextended:block/gold_food_platter"
-		}
-	}
+  "variants": {
+    "": { "model": "watheextended:block/gold_food_platter" }
+  }
 }

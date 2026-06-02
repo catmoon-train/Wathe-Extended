@@ -89,9 +89,6 @@ public class WatheExtendedGroup {
                     entries.accept(WatheExtendedBlocks.MAROON_LEDGE);
                     entries.accept(WatheExtendedBlocks.MUNTZ_LEDGE);
                     entries.accept(WatheExtendedBlocks.NAVY_LEDGE);
-                    entries.accept(WatheExtendedBlocks.MAHOGANY_CABINET);
-                    entries.accept(WatheExtendedBlocks.BUBINGA_CABINET);
-                    entries.accept(WatheExtendedBlocks.EBONY_CABINET);
                     entries.accept(WatheExtendedBlocks.ACACIA_CABINET);
                     entries.accept(WatheExtendedBlocks.BIRCH_CABINET);
                     entries.accept(WatheExtendedBlocks.CHERRY_CABINET);
