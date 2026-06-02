@@ -1,6 +1,6 @@
 {
-  "parent": "watheextended:block/template_panel",
+  "parent": "wathe:block/template_panel",
   "textures": {
-    "all": "watheextended:block/stainless_steel"
+    "all": "wathe:block/stainless_steel"
   }
 }

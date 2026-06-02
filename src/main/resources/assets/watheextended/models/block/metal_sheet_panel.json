@@ -1,6 +1,6 @@
 {
-  "parent": "watheextended:block/template_panel",
+  "parent": "wathe:block/template_panel",
   "textures": {
-    "all": "watheextended:block/metal_sheet"
+    "all": "wathe:block/metal_sheet"
   }
 }
