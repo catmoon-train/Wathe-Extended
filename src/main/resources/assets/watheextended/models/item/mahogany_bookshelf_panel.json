@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "wathe:block/mahogany_bookshelf"
+    "layer0": "watheextended:block/mahogany_bookshelf"
   }
 }

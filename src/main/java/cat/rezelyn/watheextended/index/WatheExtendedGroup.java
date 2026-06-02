@@ -100,6 +100,30 @@ public class WatheExtendedGroup {
                     entries.accept(WatheExtendedBlocks.GOLD_FOOD_PLATTER);
                     entries.accept(WatheExtendedBlocks.GOLD_DRINK_TRAY);
 
+                    // Building blocks
+                    entries.accept(WatheExtendedBlocks.ASH_PLANKS); entries.accept(WatheExtendedBlocks.ASH_PLANKS_STAIRS); entries.accept(WatheExtendedBlocks.ASH_PLANKS_SLAB); entries.accept(WatheExtendedBlocks.ASH_PLANKS_PANEL);
+                    entries.accept(WatheExtendedBlocks.SMOOTH_ASH); entries.accept(WatheExtendedBlocks.SMOOTH_ASH_STAIRS); entries.accept(WatheExtendedBlocks.SMOOTH_ASH_SLAB); entries.accept(WatheExtendedBlocks.SMOOTH_ASH_PANEL);
+                    entries.accept(WatheExtendedBlocks.ASH_HERRINGBONE); entries.accept(WatheExtendedBlocks.ASH_HERRINGBONE_STAIRS); entries.accept(WatheExtendedBlocks.ASH_HERRINGBONE_SLAB); entries.accept(WatheExtendedBlocks.ASH_HERRINGBONE_PANEL);
+                    entries.accept(WatheExtendedBlocks.OLIVE_PLANKS); entries.accept(WatheExtendedBlocks.OLIVE_PLANKS_STAIRS); entries.accept(WatheExtendedBlocks.OLIVE_PLANKS_SLAB); entries.accept(WatheExtendedBlocks.OLIVE_PLANKS_PANEL);
+                    entries.accept(WatheExtendedBlocks.SMOOTH_OLIVE); entries.accept(WatheExtendedBlocks.SMOOTH_OLIVE_STAIRS); entries.accept(WatheExtendedBlocks.SMOOTH_OLIVE_SLAB); entries.accept(WatheExtendedBlocks.SMOOTH_OLIVE_PANEL);
+                    entries.accept(WatheExtendedBlocks.OLIVE_HERRINGBONE); entries.accept(WatheExtendedBlocks.OLIVE_HERRINGBONE_STAIRS); entries.accept(WatheExtendedBlocks.OLIVE_HERRINGBONE_SLAB); entries.accept(WatheExtendedBlocks.OLIVE_HERRINGBONE_PANEL);
+                    entries.accept(WatheExtendedBlocks.PLUM_PLANKS); entries.accept(WatheExtendedBlocks.PLUM_PLANKS_STAIRS); entries.accept(WatheExtendedBlocks.PLUM_PLANKS_SLAB); entries.accept(WatheExtendedBlocks.PLUM_PLANKS_PANEL);
+                    entries.accept(WatheExtendedBlocks.SMOOTH_PLUM); entries.accept(WatheExtendedBlocks.SMOOTH_PLUM_STAIRS); entries.accept(WatheExtendedBlocks.SMOOTH_PLUM_SLAB); entries.accept(WatheExtendedBlocks.SMOOTH_PLUM_PANEL);
+                    entries.accept(WatheExtendedBlocks.PLUM_HERRINGBONE); entries.accept(WatheExtendedBlocks.PLUM_HERRINGBONE_STAIRS); entries.accept(WatheExtendedBlocks.PLUM_HERRINGBONE_SLAB); entries.accept(WatheExtendedBlocks.PLUM_HERRINGBONE_PANEL);
+
+                    // Moquette variants
+                    entries.accept(WatheExtendedBlocks.BLACK_MOQUETTE_PANEL); entries.accept(WatheExtendedBlocks.BLACK_MOQUETTE_SLAB); entries.accept(WatheExtendedBlocks.BLACK_MOQUETTE_STAIRS);
+                    entries.accept(WatheExtendedBlocks.BLUE_MOQUETTE_PANEL); entries.accept(WatheExtendedBlocks.BLUE_MOQUETTE_SLAB); entries.accept(WatheExtendedBlocks.BLUE_MOQUETTE_STAIRS);
+                    entries.accept(WatheExtendedBlocks.BROWN_MOQUETTE_PANEL); entries.accept(WatheExtendedBlocks.BROWN_MOQUETTE_SLAB); entries.accept(WatheExtendedBlocks.BROWN_MOQUETTE_STAIRS);
+                    entries.accept(WatheExtendedBlocks.GREEN_MOQUETTE_PANEL); entries.accept(WatheExtendedBlocks.GREEN_MOQUETTE_SLAB); entries.accept(WatheExtendedBlocks.GREEN_MOQUETTE_STAIRS);
+                    entries.accept(WatheExtendedBlocks.PURPLE_MOQUETTE_PANEL); entries.accept(WatheExtendedBlocks.PURPLE_MOQUETTE_SLAB); entries.accept(WatheExtendedBlocks.PURPLE_MOQUETTE_STAIRS);
+                    entries.accept(WatheExtendedBlocks.RED_MOQUETTE_PANEL); entries.accept(WatheExtendedBlocks.RED_MOQUETTE_SLAB); entries.accept(WatheExtendedBlocks.RED_MOQUETTE_STAIRS);
+
+                    // Plushies
+                    entries.accept(WatheExtendedBlocks.LUX_PLUSH);
+                    entries.accept(WatheExtendedBlocks.PIZZA_PLUSH);
+                    entries.accept(WatheExtendedBlocks.WTFJIMJIM_PLUSH);
+
                     entries.accept(WatheExtendedItems.COTTON_CANDY_SHAKE);
                     entries.accept(WatheExtendedItems.GALAXY_FIZZ);
                     entries.accept(WatheExtendedItems.HONEY_LEMONADE);

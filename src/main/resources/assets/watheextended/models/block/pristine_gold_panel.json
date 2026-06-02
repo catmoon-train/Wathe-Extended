@@ -1,6 +1,6 @@
 {
-  "parent": "wathe:block/template_panel",
+  "parent": "watheextended:block/template_panel",
   "textures": {
-    "all": "wathe:block/pristine_gold"
+    "all": "watheextended:block/pristine_gold"
   }
 }

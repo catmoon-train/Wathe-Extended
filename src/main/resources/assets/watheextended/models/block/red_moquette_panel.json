@@ -1,6 +1,6 @@
 {
   "parent": "watheextended:block/template_panel",
   "textures": {
-    "all": "wathe:block/red_moquette"
+    "all": "watheextended:block/red_moquette"
   }
 }

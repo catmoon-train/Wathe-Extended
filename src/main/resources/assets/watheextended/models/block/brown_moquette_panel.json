@@ -1,6 +1,6 @@
 {
   "parent": "watheextended:block/template_panel",
   "textures": {
-    "all": "wathe:block/brown_moquette"
+    "all": "watheextended:block/brown_moquette"
   }
 }

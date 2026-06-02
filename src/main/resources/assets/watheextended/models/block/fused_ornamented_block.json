@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/block",
   "textures": {
-    "particle": "wathe:block/gold_ornament_all"
+    "particle": "watheextended:block/gold_ornament_all"
   },
   "elements": []
 }

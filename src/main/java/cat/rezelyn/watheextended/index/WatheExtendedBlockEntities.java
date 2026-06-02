@@ -14,6 +14,8 @@ public class WatheExtendedBlockEntities {
     public static final BlockEntityType<GreyiferPlushBlockEntity> GREYIFER_PLUSH = Registry.register(
             BuiltInRegistries.BLOCK_ENTITY_TYPE, WatheExtended.id("greyifer_plush"),
             BlockEntityType.Builder.of(GreyiferPlushBlockEntity::new,
-                    WatheExtendedBlocks.GREYIFER_PLUSH, WatheExtendedBlocks.IWY_PLUSH).build(null));
+                    WatheExtendedBlocks.GREYIFER_PLUSH, WatheExtendedBlocks.IWY_PLUSH,
+                    WatheExtendedBlocks.LUX_PLUSH, WatheExtendedBlocks.PIZZA_PLUSH,
+                    WatheExtendedBlocks.WTFJIMJIM_PLUSH).build(null));
     public static void initialize() {}
 }

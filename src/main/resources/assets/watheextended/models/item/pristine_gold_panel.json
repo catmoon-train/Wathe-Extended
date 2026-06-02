@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "wathe:block/pristine_gold"
+    "layer0": "watheextended:block/pristine_gold"
   }
 }
