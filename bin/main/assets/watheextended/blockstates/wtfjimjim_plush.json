@@ -1,8 +1,0 @@
-{
-	"variants": {
-		"facing=north": { "model": "watheextended:block/wtfjimjim_plush" },
-		"facing=east": { "model": "watheextended:block/wtfjimjim_plush", "y": 90 },
-		"facing=south": { "model": "watheextended:block/wtfjimjim_plush", "y": 180 },
-		"facing=west": { "model": "watheextended:block/wtfjimjim_plush", "y": 270 }
-	}
-}

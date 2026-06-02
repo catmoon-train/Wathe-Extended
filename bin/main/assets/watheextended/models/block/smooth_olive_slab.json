@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "watheextended:block/smooth_olive",
-    "side": "watheextended:block/smooth_olive",
-    "top": "watheextended:block/smooth_olive"
-  }
-}

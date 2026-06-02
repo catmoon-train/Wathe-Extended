@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "watheextended:block/ash_herringbone",
-    "side": "watheextended:block/ash_herringbone",
-    "top": "watheextended:block/ash_herringbone"
-  }
-}

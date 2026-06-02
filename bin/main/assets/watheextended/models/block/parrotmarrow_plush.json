@@ -1,8 +1,0 @@
-{
-	"credit": "ParrotMarrow plush - Minecraft skin UVs",
-	"parent": "watheextended:block/greyifer_plush",
-	"textures": {
-		"0": "watheextended:block/parrotmarrow_plush",
-		"particle": "watheextended:block/parrotmarrow_plush"
-	}
-}

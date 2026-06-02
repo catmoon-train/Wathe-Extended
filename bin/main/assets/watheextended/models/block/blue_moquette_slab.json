@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "wathe:block/blue_moquette",
-    "side": "wathe:block/blue_moquette",
-    "top": "wathe:block/blue_moquette"
-  }
-}

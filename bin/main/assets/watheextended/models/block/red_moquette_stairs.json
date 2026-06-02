@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "wathe:block/red_moquette",
-    "side": "wathe:block/red_moquette",
-    "top": "wathe:block/red_moquette"
-  }
-}

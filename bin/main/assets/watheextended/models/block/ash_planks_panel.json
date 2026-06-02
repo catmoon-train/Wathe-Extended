@@ -1,6 +1,0 @@
-{
-  "parent": "watheextended:block/template_panel",
-  "textures": {
-    "all": "watheextended:block/ash_planks"
-  }
-}

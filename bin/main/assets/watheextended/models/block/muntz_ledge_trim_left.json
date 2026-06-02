@@ -1,6 +1,0 @@
-{
-  "parent": "watheextended:block/template_floor_ledge_trim_left",
-  "textures": {
-    "texture": "watheextended:block/muntz_ledge"
-  }
-}

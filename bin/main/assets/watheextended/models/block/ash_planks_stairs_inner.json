@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "watheextended:block/ash_planks",
-    "side": "watheextended:block/ash_planks",
-    "top": "watheextended:block/ash_planks"
-  }
-}

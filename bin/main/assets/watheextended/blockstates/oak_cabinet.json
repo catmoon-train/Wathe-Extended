@@ -1,8 +1,0 @@
-{
-  "variants": {
-    "facing=north": { "model": "watheextended:block/oak_cabinet" },
-    "facing=east": { "model": "watheextended:block/oak_cabinet", "y": 90 },
-    "facing=south": { "model": "watheextended:block/oak_cabinet", "y": 180 },
-    "facing=west": { "model": "watheextended:block/oak_cabinet", "y": 270 }
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "watheextended:block/plum_planks",
-    "side": "watheextended:block/plum_planks",
-    "top": "watheextended:block/plum_planks"
-  }
-}
-

@@ -1,8 +1,0 @@
-{
-	"credit": "Lux plush - Minecraft skin UVs",
-	"parent": "watheextended:block/greyifer_plush",
-	"textures": {
-		"0": "watheextended:block/lux_plush",
-		"particle": "watheextended:block/lux_plush"
-	}
-}

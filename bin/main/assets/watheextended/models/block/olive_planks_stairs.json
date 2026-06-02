@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "watheextended:block/olive_planks",
-    "side": "watheextended:block/olive_planks",
-    "top": "watheextended:block/olive_planks"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "multipart": [
-    {
-      "apply": {
-        "model": "watheextended:block/fused_ornamented_block"
-      }
-    }
-  ]
-}

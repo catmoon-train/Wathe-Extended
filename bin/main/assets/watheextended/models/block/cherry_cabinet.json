@@ -1,9 +1,0 @@
-{
-  "parent": "watheextended:block/template_cabinet",
-  "textures": {
-    "bottom": "watheextended:block/cherry_cabinet_bottom",
-    "front": "watheextended:block/cherry_cabinet_front",
-    "side": "watheextended:block/cherry_cabinet_side",
-    "top": "watheextended:block/cherry_cabinet_top"
-  }
-}
