@@ -4,6 +4,8 @@ import cat.rezelyn.watheextended.client.render.GreyiferPlushBlockEntityRenderer;
 import cat.rezelyn.watheextended.client.render.IshPlushBlockEntityRenderer;
 import cat.rezelyn.watheextended.index.WatheExtendedBlockEntities;
 import cat.rezelyn.watheextended.index.WatheExtendedBlocks;
+import io.wifi.starrailexpress.client.render.block_entity.PlateBlockEntityRenderer;
+import io.wifi.starrailexpress.index.TMMBlockEntities;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.client.renderer.RenderType;
@@ -14,7 +16,9 @@ public class WatheExtendedClient implements ClientModInitializer {
     public void onInitializeClient() {
         BlockEntityRenderers.register(WatheExtendedBlockEntities.ISH_PLUSH, IshPlushBlockEntityRenderer::new);
         BlockEntityRenderers.register(WatheExtendedBlockEntities.GREYIFER_PLUSH, GreyiferPlushBlockEntityRenderer::new);
-
+        BlockEntityRenderers.register(
+                TMMBlockEntities.BEVERAGE_PLATE,
+                PlateBlockEntityRenderer::new);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(),
                 WatheExtendedBlocks.ANTHRACITE_STEEL_ORNAMENT,
                 WatheExtendedBlocks.KHAKI_STEEL_ORNAMENT,
@@ -25,7 +29,6 @@ public class WatheExtendedClient implements ClientModInitializer {
                 WatheExtendedBlocks.SNOWY_BIRCH_LEAVES, WatheExtendedBlocks.SNOWY_JUNGLE_LEAVES,
                 WatheExtendedBlocks.SNOWY_ACACIA_LEAVES, WatheExtendedBlocks.SNOWY_DARK_OAK_LEAVES,
                 WatheExtendedBlocks.SNOWY_MANGROVE_LEAVES, WatheExtendedBlocks.SNOWY_CHERRY_LEAVES,
-                WatheExtendedBlocks.SNOWY_AZALEA_LEAVES, WatheExtendedBlocks.SNOWY_FLOWERING_AZALEA_LEAVES
-        );
+                WatheExtendedBlocks.SNOWY_AZALEA_LEAVES, WatheExtendedBlocks.SNOWY_FLOWERING_AZALEA_LEAVES);
     }
 }

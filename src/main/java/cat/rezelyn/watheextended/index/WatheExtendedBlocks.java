@@ -134,7 +134,6 @@ public class WatheExtendedBlocks {
             BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.MUD)));
     public static final Block MUSIC_DISC_BOX = register("music_disc_box", new MusicDiscBoxBlock(
             BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.WOOD)));
-
     // SRE decorative blocks
     public static final Block GOLD_LEDGE = register("gold_ledge", new LedgeBlock(
             BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.METAL)));
@@ -164,9 +163,9 @@ public class WatheExtendedBlocks {
             BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.WOOD)));
     public static final Block SPRUCE_CABINET = register("spruce_cabinet", new CabinetBlock(
             BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.WOOD)));
-    public static final Block GOLD_FOOD_PLATTER = register("gold_food_platter", new FoodPlatterBlock(
+    public static final Block GOLD_FOOD_PLATTER = register("gold_food_platter", new WatheExtendedFoodPlatterBlock(
             BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.METAL)));
-    public static final Block GOLD_DRINK_TRAY = register("gold_drink_tray", new DrinkTrayBlock(
+    public static final Block GOLD_DRINK_TRAY = register("gold_drink_tray", new WatheExtendedDrinkTrayBlock(
             BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.METAL)));
 
     // Building blocks - Ash

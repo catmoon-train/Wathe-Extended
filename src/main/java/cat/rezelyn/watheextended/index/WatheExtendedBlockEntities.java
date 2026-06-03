@@ -3,6 +3,7 @@ package cat.rezelyn.watheextended.index;
 import cat.rezelyn.watheextended.WatheExtended;
 import cat.rezelyn.watheextended.block.GreyiferPlushBlockEntity;
 import cat.rezelyn.watheextended.block.IshPlushBlockEntity;
+import cat.rezelyn.watheextended.block.WatheExtendedBeveragePlateBlockEntity;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -18,6 +19,10 @@ public class WatheExtendedBlockEntities {
                     WatheExtendedBlocks.GREYIFER_PLUSH, WatheExtendedBlocks.IWY_PLUSH,
                     WatheExtendedBlocks.LUX_PLUSH, WatheExtendedBlocks.PIZZA_PLUSH,
                     WatheExtendedBlocks.WTFJIMJIM_PLUSH).build(null));
+    public static final BlockEntityType<WatheExtendedBeveragePlateBlockEntity> BEVERAGE_PLATE = Registry.register(
+            BuiltInRegistries.BLOCK_ENTITY_TYPE, WatheExtended.id("beverage_plate"),
+            BlockEntityType.Builder.of(WatheExtendedBeveragePlateBlockEntity::new, WatheExtendedBlocks.GOLD_DRINK_TRAY,
+                    WatheExtendedBlocks.GOLD_FOOD_PLATTER).build(null));
 
     public static void initialize() {
     }
