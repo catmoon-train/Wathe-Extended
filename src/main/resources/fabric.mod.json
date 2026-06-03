@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "watheextended-sre",
+  "id": "sre-watheextended",
   "version": "${version}",
   "name": "Wathe Extended",
   "description": "Decoration add-on mod adding blocks and items for train builds. Depends on StarRailExpress.",
