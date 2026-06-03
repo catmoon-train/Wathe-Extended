@@ -5,7 +5,6 @@ import cat.rezelyn.watheextended.client.render.IshPlushBlockEntityRenderer;
 import cat.rezelyn.watheextended.index.WatheExtendedBlockEntities;
 import cat.rezelyn.watheextended.index.WatheExtendedBlocks;
 import io.wifi.starrailexpress.client.render.block_entity.PlateBlockEntityRenderer;
-import io.wifi.starrailexpress.index.TMMBlockEntities;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.client.renderer.RenderType;
@@ -17,7 +16,7 @@ public class WatheExtendedClient implements ClientModInitializer {
         BlockEntityRenderers.register(WatheExtendedBlockEntities.ISH_PLUSH, IshPlushBlockEntityRenderer::new);
         BlockEntityRenderers.register(WatheExtendedBlockEntities.GREYIFER_PLUSH, GreyiferPlushBlockEntityRenderer::new);
         BlockEntityRenderers.register(
-                TMMBlockEntities.BEVERAGE_PLATE,
+                WatheExtendedBlockEntities.BEVERAGE_PLATE,
                 PlateBlockEntityRenderer::new);
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(),
                 WatheExtendedBlocks.ANTHRACITE_STEEL_ORNAMENT,
