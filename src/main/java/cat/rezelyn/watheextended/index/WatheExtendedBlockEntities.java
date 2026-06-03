@@ -20,7 +20,7 @@ public class WatheExtendedBlockEntities {
                     WatheExtendedBlocks.LUX_PLUSH, WatheExtendedBlocks.PIZZA_PLUSH,
                     WatheExtendedBlocks.WTFJIMJIM_PLUSH).build(null));
     public static final BlockEntityType<WatheExtendedBeveragePlateBlockEntity> BEVERAGE_PLATE = Registry.register(
-            BuiltInRegistries.BLOCK_ENTITY_TYPE, WatheExtended.id("beverage_plate"),
+            BuiltInRegistries.BLOCK_ENTITY_TYPE, WatheExtended.id("ext_beverage_plate"),
             BlockEntityType.Builder.of(WatheExtendedBeveragePlateBlockEntity::new, WatheExtendedBlocks.GOLD_DRINK_TRAY,
                     WatheExtendedBlocks.GOLD_FOOD_PLATTER).build(null));
 

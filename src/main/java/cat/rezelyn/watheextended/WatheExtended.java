@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 
 public class WatheExtended implements ModInitializer {
     public static final String MOD_ID = "watheextended";
-    private static final Logger LOGGER = LoggerFactory.getLogger(WatheExtended.class);
+    public static final Logger LOGGER = LoggerFactory.getLogger(WatheExtended.class);
 
     public static @NotNull ResourceLocation id(String name) {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, name);
