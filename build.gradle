@@ -51,7 +51,7 @@ dependencies {
 
     // // Simple Voice Chat (transitive dependency of wathe)
     // implementation "de.maxhenkel.voicechat:voicechat-api:${voicechat_api_version}"
-    // modRuntimeOnly "de.maxhenkel.voicechat:voicechat-api:${voicechat_api_version}:fabric-stub"
+    modRuntimeOnly "de.maxhenkel.voicechat:voicechat-api:${voicechat_api_version}:fabric-stub"
 }
 
 processResources {
