@@ -135,17 +135,17 @@ public class WatheExtendedBlocks {
     public static final Block MUSIC_DISC_BOX = register("music_disc_box", new MusicDiscBoxBlock(
             BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.WOOD)));
     // SRE decorative blocks
-    public static final Block GOLD_LEDGE = register("gold_ledge", new LedgeBlock(
+    public static final Block GOLD_LEDGE = register("gold_ledge", new WatheExtendedLedgeBlock(
             BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.METAL)));
-    public static final Block ANTHRACITE_LEDGE = register("anthracite_ledge", new LedgeBlock(
+    public static final Block ANTHRACITE_LEDGE = register("anthracite_ledge", new WatheExtendedLedgeBlock(
             BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.METAL)));
-    public static final Block KHAKI_LEDGE = register("khaki_ledge", new LedgeBlock(
+    public static final Block KHAKI_LEDGE = register("khaki_ledge", new WatheExtendedLedgeBlock(
             BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.METAL)));
-    public static final Block MAROON_LEDGE = register("maroon_ledge", new LedgeBlock(
+    public static final Block MAROON_LEDGE = register("maroon_ledge", new WatheExtendedLedgeBlock(
             BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.METAL)));
-    public static final Block MUNTZ_LEDGE = register("muntz_ledge", new LedgeBlock(
+    public static final Block MUNTZ_LEDGE = register("muntz_ledge", new WatheExtendedLedgeBlock(
             BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.METAL)));
-    public static final Block NAVY_LEDGE = register("navy_ledge", new LedgeBlock(
+    public static final Block NAVY_LEDGE = register("navy_ledge", new WatheExtendedLedgeBlock(
             BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.METAL)));
     public static final Block ACACIA_CABINET = register("acacia_cabinet", new CabinetBlock(
             BlockBehaviour.Properties.of().noOcclusion().strength(0.5f).sound(SoundType.WOOD)));
